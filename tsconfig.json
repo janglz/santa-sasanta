@@ -1,0 +1,24 @@
+{
+  "compilerOptions": {
+    "outDir": "./public/",
+    "module": "esnext",
+    "target": "es5",
+    "sourceMap": true,
+    "jsx": "react",
+    "allowJs": true,
+    "lib": [ "dom", "dom.iterable", "esnext" ],
+    "skipLibCheck": true,
+    "esModuleInterop": true,
+    "allowSyntheticDefaultImports": true,
+    "forceConsistentCasingInFileNames": true,
+    "moduleResolution": "node",
+    "resolveJsonModule": true,
+    "isolatedModules": true,
+    "strict": false,
+    "plugins": [{ 
+      "name": "typescript-plugin-css-modules"
+    }]
+  },
+  "exclude": [ "node_modules" ],
+  "include": [ "src" ]
+}

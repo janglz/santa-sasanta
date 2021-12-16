@@ -1,12 +1,20 @@
 {
   "name": "santa-sasanta",
+  "main": "src/index.js",
   "packageManager": "yarn@3.1.1",
   "dependencies": {
+    "@babel/preset-env": "^7.16.5",
+    "eslint": "^8.4.1",
     "react": "^17.0.2",
     "react-dom": "^17.0.2",
     "react-scripts": "4.0.3",
+    "sass-loader": "^12.4.0",
+    "serve": "^12.0.0",
+    "source-map-loader": "^3.0.0",
+    "ts-loader": "^9.2.6",
     "typescript": "^4.5.4",
     "web-vitals": "^1.1.2",
+    "webpack-cli": "^4.9.1",
     "webpack-dev-server": "^4.6.0"
   },
   "eslintConfig": {
@@ -28,18 +36,28 @@
     ]
   },
   "devDependencies": {
-    "@types/react": "^17.0.37"
+    "@babel/runtime": "7.13.8",
+    "@types/node": "^17.0.0",
+    "@types/react": "^17.0.37",
+    "@types/react-dom": "^17.0.11",
+    "@types/webpack": "^5.28.0",
+    "@typescript-eslint/eslint-plugin": "^4.29.1",
+    "@typescript-eslint/parser": "^4.29.1",
+    "css-loader": "^6.5.1",
+    "css-modules-typescript-loader": "^4.0.1",
+    "file-loader": "^6.2.0",
+    "html-webpack-plugin": "5",
+    "mini-css-extract-plugin": "^2.4.5",
+    "postcss-loader": "^6.2.1",
+    "style-loader": "^3.3.1",
+    "tsconfig-paths-webpack-plugin": "^3.5.2",
+    "typescript": "^4.5.4",
+    "typescript-plugin-css-modules": "^3.4.0",
+    "webpack": "^5.65.0"
   },
-  "compilerOptions": {
-    "target": "es6",
-    "module": "commonjs",
-    "moduleResolution": "node",
-    "noResolve": false,
-    "noImplicitAny": false,
-    "removeComments": true,
-    "sourceMap": true,
-    "allowJs": true,
-    "jsx": "react"
+  "scripts": {
+    "start": "webpack-dev-server --mode development --live-reload --progress",
+    "build": "webpack --mode production"
   },
   "exclude": [
     "./node_modules/**/*"

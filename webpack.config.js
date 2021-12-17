@@ -22,6 +22,13 @@ module.exports = {
         test: /\.tsx?$/,
         use: 'ts-loader',
       },
+      {
+        test: /\.m?js$/,
+        exclude: /(node_modules|bower_components)/,
+        use: {
+          loader: "babel-loader"
+        }
+      },
     ],
   },
   resolve: {
@@ -40,6 +47,8 @@ module.exports = {
   plugins: [
     new HtmlWebpackPlugin({
       template: './public/index.html',
+      name: 'index.html',
+      inject: 'head'
     }),
   ]
 };

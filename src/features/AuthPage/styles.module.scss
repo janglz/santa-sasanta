@@ -1,0 +1,19 @@
+.form {
+  display: flex;
+  flex-direction: column;
+  width: 14em;
+}
+
+.inputWrapper {
+  margin: auto;
+}
+
+.inputText {
+  height: 2em;
+  margin-bottom: 0.5em;
+}
+
+.pageWrapper {
+  display: flex;
+  justify-content: center;
+}

@@ -19,7 +19,7 @@ const CreateGroup = () => {
 
   useEffect(() => {
     if (data) {
-      navigate(data.groupLink);
+      navigate(data?.groupLink || "/");
     }
   }, [data]);
   return (

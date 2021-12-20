@@ -1,11 +1,25 @@
 import React, { useEffect, useState } from "react";
+import { useLocation } from "react-router-dom";
 import { useService } from "../../hooks";
 import service from "../../service";
 import MainView from "./MainView";
 
-const Results = ({ groupId }) => {
+const Main = () => {
+  const location = useLocation();
+  const groupId = (location && location.pathname) || "/";
   const { request, data, isFetching, error } = useService(service.getResult);
-  const handleWishListSubmit = () => {};
+  const {
+    request: requestUpdate,
+    data: dataUpdate,
+    isFetching: isFetchingUpdate,
+    error: errorUpdate,
+  } = useService(service.updateUser);
+
+  const [wish, setWish] = useState("");
+  const [name, setName] = useState("");
+  const handleSubmitUpdate = () => {
+    requestUpdate({});
+  };
 
   useEffect(() => {
     request({
@@ -14,7 +28,24 @@ const Results = ({ groupId }) => {
       },
     });
   }, []);
-  return <MainView data={data} isFetching={isFetching} error={error} />;
+
+  useEffect(() => {
+    if (data) {
+      setName(data.name);
+    }
+  }, [data]);
+  return (
+    <MainView
+      data={data}
+      isFetching={isFetching || isFetchingUpdate}
+      error={error}
+      onSubmit={handleSubmitUpdate}
+      onSetWish={setWish}
+      onSetName={setName}
+      wish={wish}
+      name={name}
+    />
+  );
 };
 
-export default Results;
+export default Main;

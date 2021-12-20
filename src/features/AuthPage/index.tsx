@@ -10,12 +10,12 @@ import styles from "./styles.module.scss";
 const Auth = () => {
   const [form, setForm] = useState({ password: "", name: "", email: "" });
   const [view, setView] = useState("registration");
-  // const {
-  //   request: authRequest,
-  //   data: authData,
-  //   isFetching: isAuthFetching,
-  //   error: authError,
-  // } = useService(service.auth);
+  const {
+    request: authRequest,
+    data: authData,
+    isFetching: isAuthFetching,
+    error: authError,
+  } = useService(service.auth);
   const {
     request: registerRequest,
     data: registerData,
@@ -28,12 +28,16 @@ const Auth = () => {
     setForm({ ...form, [e.target.id]: e.target.value });
   };
 
-  const handleRegistrationSubmit = async () => {
-    await registerRequest(form);
+  const handleRegistrationSubmit = () => {
+    registerRequest(form);
+  };
+
+  const handleLoginSubmit = () => {
+    authRequest(form);
   };
   return (
     <div className={styles.pageWrapper}>
-      {isRegisterFetching && <Spinner />}
+      {(isRegisterFetching || isAuthFetching) && <Spinner />}
       <button
         className={styles.selectPage}
         onClick={() => setView("registration")}
@@ -54,7 +58,7 @@ const Auth = () => {
         <LoginView
           form={form}
           onFormChange={handleFormChange}
-          onSubmit={handleRegistrationSubmit}
+          onSubmit={handleLoginSubmit}
         />
       )}
       {registerError && <Error error={registerError?.message} />}

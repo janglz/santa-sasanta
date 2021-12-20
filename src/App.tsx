@@ -1,10 +1,12 @@
 import React from "react";
 import styles from "./theme/main.module.scss";
-import { BrowserRouter } from "react-router-dom";
+import { BrowserRouter, useLocation } from "react-router-dom";
 import { useRoutes } from "./routes";
 
 const App = () => {
-  const routes = useRoutes(false, "");
+  const location = useLocation();
+  const groupId = location.pathname;
+  const routes = useRoutes(true, groupId);
   return <BrowserRouter>{routes}</BrowserRouter>;
 };
 

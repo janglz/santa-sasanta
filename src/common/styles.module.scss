@@ -1,3 +1,19 @@
+.overlay {
+  position: absolute;
+  background-color: rgba(70, 71, 88, 0.521);
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+}
+
+.error {
+  background-color: rgba(255, 0, 13, 0.356);
+  width: 10em;
+  height: 3em;
+  margin: 1em auto;
+}
+
 .loader,
 .loader:after {
   border-radius: 50%;

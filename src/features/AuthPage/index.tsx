@@ -34,8 +34,15 @@ const Auth = () => {
   return (
     <div className={styles.pageWrapper}>
       {isRegisterFetching && <Spinner />}
-      <button onClick={() => setView("registration")}>регистрация</button>
-      <button onClick={() => setView("login")}>вход</button>
+      <button
+        className={styles.selectPage}
+        onClick={() => setView("registration")}
+      >
+        регистрация
+      </button>
+      <button className={styles.selectPage} onClick={() => setView("login")}>
+        вход
+      </button>
       {view === "registration" && (
         <RegistrationView
           form={form}

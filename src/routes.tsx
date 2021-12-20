@@ -16,6 +16,7 @@ export const useRoutes = (isAuth) => {
   return (
     <Routes>
       <Route path={"/"} element={<AuthPage />} />
+      <Route path="*" element={<AuthPage />} />
     </Routes>
   );
 };

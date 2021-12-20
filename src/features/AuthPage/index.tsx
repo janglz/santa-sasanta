@@ -1,13 +1,15 @@
-import React, { useState } from "react";
-import { useService } from "../../hooks";
+import React, { useState, useContext } from "react";
+import { useService, useAuth } from "../../hooks";
 import RegistrationView from "./RegistrationView";
 import LoginView from "./LoginView";
+import { AuthContext } from "./../../context/AuthContext";
 import Error from "../../common/Error";
 import service from "../../service";
 import Spinner from "../../common/Spinner";
 import styles from "./styles.module.scss";
 
 const Auth = () => {
+  const auth = useContext(AuthContext);
   const [form, setForm] = useState({ password: "", name: "", email: "" });
   const [view, setView] = useState("registration");
   const {
@@ -34,6 +36,7 @@ const Auth = () => {
 
   const handleLoginSubmit = () => {
     authRequest(form);
+    auth.login(authData.token, authData.userId);
   };
   return (
     <div className={styles.pageWrapper}>

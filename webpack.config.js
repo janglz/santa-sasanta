@@ -36,7 +36,8 @@ module.exports = {
   },
   output: {
     filename: 'bundle-[hash].js',
-    path: path.resolve(__dirname, '/tmp/public')
+    path: path.resolve(__dirname, '/tmp/public'),
+    publicPath: path.resolve(__dirname, '/tmp/public')
   },
   devServer: {
     port: 8000,

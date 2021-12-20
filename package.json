@@ -59,6 +59,7 @@
     "typescript-plugin-css-modules": "^3.4.0",
     "webpack": "^5.65.0"
   },
+  "engines" : { "node" : ">=16.x" },
   "scripts": {
     "start": "webpack-dev-server --mode development --live-reload --progress",
     "build": "webpack --mode production"

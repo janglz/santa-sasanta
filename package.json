@@ -62,7 +62,7 @@
   "engines" : { "node" : ">=16.x" },
   "scripts": {
     "start": "webpack-dev-server --mode development --live-reload --progress",
-    "build": "webpack --mode production"
+    "deploy": "git push heroku master"
   },
   "exclude": [
     "./node_modules/**/*"

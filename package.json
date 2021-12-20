@@ -1,6 +1,7 @@
 {
   "name": "santa-sasanta",
   "main": "src/index.js",
+  "homepage": "https://santa-sasanta.herokuapp.com",
   "packageManager": "yarn@3.1.1",
   "dependencies": {
     "@babel/preset-env": "^7.16.5",

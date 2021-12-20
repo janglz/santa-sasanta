@@ -1,7 +1,6 @@
 {
   "name": "santa-sasanta",
   "main": "src/index.js",
-  "homepage": "https://santa-sasanta.herokuapp.com",
   "packageManager": "yarn@3.1.1",
   "dependencies": {
     "@babel/preset-env": "^7.16.5",
@@ -65,8 +64,9 @@
     "node": ">=16.x"
   },
   "scripts": {
-    "start": "webpack --mode production",
-    "start:complete": "node app.js",
+    "build-app": "webpack --mode production",
+    "server": "node app.js",
+    "build": "webpack",
     "serve": "webpack-dev-server --mode development --live-reload --progress",
     "deploy": "git push heroku master"
   },

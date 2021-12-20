@@ -36,8 +36,7 @@ module.exports = {
   },
   output: {
     filename: 'bundle-[hash].js',
-    path: path.resolve(__dirname, '/tmp/public'),
-    publicPath: path.resolve(__dirname, '/dist')
+    path: path.resolve(__dirname, '/public')
   },
   devServer: {
     port: 8000,
@@ -46,7 +45,7 @@ module.exports = {
   },
   plugins: [
     new HtmlWebpackPlugin({
-      template: './public/index.html',
+      template: './index.html',
       name: 'index.html',
       inject: 'head'
     }),

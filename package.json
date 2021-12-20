@@ -64,7 +64,8 @@
     "node": ">=16.x"
   },
   "scripts": {
-    "start": "webpack-dev-server --mode development --live-reload --progress",
+    "start": "node app.js",
+    "serve": "webpack-dev-server --mode development --live-reload --progress",
     "deploy": "git push heroku master"
   },
   "exclude": [

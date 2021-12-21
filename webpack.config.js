@@ -40,7 +40,7 @@ module.exports = {
     publicPath: path.resolve(__dirname, '/')
   },
   devServer: {
-    port: 8000,
+    port: process.env.PORT,
     historyApiFallback: true,
     hot: true,
   },

@@ -6,7 +6,7 @@ var path = require('path');
 app.use(express.static(__dirname + '/'));
 
 app.get('*', function (req, res) {
-  res.sendFile(path.join(__dirname, '/santa-sasanta/index.html'));
+  res.sendFile(path.join(__dirname, '/dist/index.html'));
 });
 
 app.listen(process.env.PORT || 1337, '0.0.0.0', () => console.log('working'));

@@ -36,8 +36,7 @@ module.exports = {
   },
   output: {
     filename: 'bundle-[contenthash].js',
-    path: path.resolve(__dirname, 'build/'),
-    publicPath: path.resolve(__dirname, '/')
+    path: path.resolve(__dirname, 'build/')
   },
   devServer: {
     port: process.env.PORT,

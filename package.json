@@ -63,8 +63,8 @@
   },
   "engines": {
     "node": "16.8.x",
-    "npm": ">=7.x",
-    "yarn": ">=3.1.1"
+    "npm": "7.21.x",
+    "yarn": "3.1.1"
   },
   "scripts": {
     "build-app": "webpack --mode production",

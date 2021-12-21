@@ -1,6 +1,5 @@
 const path = require('path')
 const HtmlWebpackPlugin = require('html-webpack-plugin');
-const DotenvPlugin = require('dotenv-webpack');
 
 module.exports = {
   watch: true,
@@ -37,7 +36,7 @@ module.exports = {
   },
   output: {
     filename: 'bundle-[hash].js',
-    path: path.resolve(__dirname, '/dist'),
+    path: path.resolve(__dirname, 'dist/'),
     publicPath: path.resolve(__dirname, '/')
   },
   devServer: {
@@ -46,7 +45,6 @@ module.exports = {
     hot: true,
   },
   plugins: [
-    new DotenvPlugin(),
     new HtmlWebpackPlugin({
       template: './public/index.html',
       name: 'index.html',

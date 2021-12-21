@@ -1,5 +1,6 @@
 const path = require('path')
 const HtmlWebpackPlugin = require('html-webpack-plugin');
+const DotenvPlugin = require('dotenv-webpack');
 
 module.exports = {
   watch: true,
@@ -36,8 +37,8 @@ module.exports = {
   },
   output: {
     filename: 'bundle-[hash].js',
-    path: path.resolve(__dirname, '/tmp/public'),
-    publicPath: path.resolve(__dirname, '/tmp/public')
+    path: path.resolve(__dirname, '/dist'),
+    publicPath: path.resolve(__dirname, '/')
   },
   devServer: {
     port: 8000,
@@ -45,8 +46,9 @@ module.exports = {
     hot: true,
   },
   plugins: [
+    new DotenvPlugin(),
     new HtmlWebpackPlugin({
-      template: './index.html',
+      template: './public/index.html',
       name: 'index.html',
       inject: 'head'
     }),

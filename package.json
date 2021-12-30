@@ -68,7 +68,7 @@
   },
   "scripts": {
     "start": "node app.js",
-    "heroku-postbuild": "webpack --mode production --progress",
+    "heroku-postbuild": "webpack --config webpack.config.js --mode production --progress",
     "build-app": "webpack --mode production",
     "serve": "webpack-dev-server --mode development --live-reload --progress",
     "deploy": "git push heroku master"
